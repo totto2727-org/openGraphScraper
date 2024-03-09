@@ -1,4 +1,4 @@
-import validator from 'validator';
+import { isURL } from 'validator';
 import type { CustomMetaTags, ValidatorSettings, OpenGraphScraperOptions } from './types';
 
 export const defaultUrlValidatorSettings = {
@@ -25,7 +25,7 @@ export const defaultUrlValidatorSettings = {
  *
  */
 export function isUrlValid(url: string, urlValidatorSettings: ValidatorSettings): boolean {
-  return typeof url === 'string' && url.length > 0 && validator.isURL(url, urlValidatorSettings);
+  return typeof url === 'string' && url.length > 0 && isURL(url, urlValidatorSettings);
 }
 
 /**
